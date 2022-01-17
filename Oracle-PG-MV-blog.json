@@ -543,8 +543,11 @@
               " echo starting the copy of zip files from s3 `date` >> $INSTALL_LOG\n",
               " mkdir -p /home/oracle/MaterializedViewTest\n",
               " cd /home/oracle/MaterializedViewTest\n",
-              " wget https://github.com/natabirc/amazon-oracle-postgres-mv-blog/blob/main/MaterializedViewTestCase.zip\n",
-              " unzip MaterializedViewTestCase.zip\n",
+              " wget https://github.com/natabirc/amazon-oracle-postgres-mv-blog/archive/refs/heads/main.zip\n",
+              " unzip main.zip\n",
+              "# cd /home/oracle/MaterializedViewTest/amazon-oracle-postgres-mv-blog-main/MaterializedViewTestCase\n",
+              "# wget https://github.com/natabirc/amazon-oracle-postgres-mv-blog/blob/main/MaterializedViewTestCase.zip\n",
+              "# unzip MaterializedViewTestCase.zip\n",
               " chown -R oracle:oinstall /home/oracle/MaterializedViewTest\n",
               "}\n",
 
@@ -614,10 +617,6 @@
     "OracleSQLEndpointAddress": {
       "Description" :  "An Oracle database endpoint",
       "Value"       : {"Fn::GetAtt" : ["RdsOracleSQL", "Endpoint.Address"]}
-    },
-    "DmsEndpointAddress": {
-      "Description" :  "DMS replication instance endpoint",
-      "Value"       : {"Fn::GetAtt" : ["DmsReplicationInstance", "ReplicationInstancePrivateIpAddresses"]}
     },
     "PostgreSQLEndpointAddress": {
       "Description" :  "The PostgreSQL database endpoint",
