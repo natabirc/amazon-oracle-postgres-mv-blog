@@ -1,0 +1,73 @@
+{
+  "rules": [
+    {
+      "rule-type"     : "transformation",
+      "rule-id"       : "1",
+      "rule-name"     : "lowercase_schema",
+      "rule-target"   : "schema",
+      "object-locator": {
+        "schema-name" : "%"
+      },
+      "rule-action" : "convert-lowercase",
+      "value"       : null,
+      "old-value"   : null
+    },
+    {
+      "rule-type"     : "transformation",
+      "rule-id"       : "2",
+      "rule-name"     : "lowercase_table",
+      "rule-target"   : "table",
+      "object-locator": {
+        "schema-name" : "%",
+        "table-name"  : "%"
+      },
+      "rule-action" : "convert-lowercase",
+      "value"       : null,
+      "old-value"   : null
+    },
+    {
+      "rule-type"     : "transformation",
+      "rule-id"       : "3",
+      "rule-name"     : "lowercase_table",
+      "rule-target"   : "column",
+      "object-locator": {
+        "schema-name" : "%",
+        "table-name"  : "%",
+        "column-name" : "%"
+      },
+      "rule-action" : "convert-lowercase",
+      "value"       : null,
+      "old-value"   : null
+    },
+    {
+        "rule-type"     : "selection",
+        "rule-id"       : "4",
+        "rule-name"     : "edge_case_view",
+        "object-locator": {
+          "schema-name" : "SNAP_TEST",
+          "table-name"  : "EDGE_CASE_VIEW"
+        },
+        "rule-action": "include"
+    },
+    {
+        "rule-type"     : "selection",
+        "rule-id"       : "5",
+        "rule-name"     : "edge_case_pk_view",
+        "object-locator": {
+          "schema-name" : "SNAP_TEST",
+          "table-name"  : "EDGE_CASE_PK_VIEW"
+        },
+        "rule-action": "include"
+    },
+    {
+        "rule-type"     : "selection",
+        "rule-id"       : "6",
+        "rule-name"     : "edge_case_all_cols_view",
+        "object-locator": {
+          "schema-name" : "SNAP_TEST",
+          "table-name"  : "EDGE_CASE_ALL_COLS_VIEW"
+        },
+        "rule-action": "include"
+    }
+  ]
+}
